@@ -16,3 +16,7 @@ print(df.head(10))
 #You can change how many head you want to print dates
 
 #Then we run the code can get the whole stock data of Tesla in a specfic dates. 
+
+
+#You can also export a csv file for you data
+df.to_csv('tsla.csv')
