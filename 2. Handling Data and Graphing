@@ -27,3 +27,26 @@ print(df.head())
 
 df['Adj Close'].plot()
 plt.show()
+----------------------------------------------------------------------------------------
+
+Little example how I graph for KRUS stock price:
+
+import datetime as dt
+import matplotlib.pyplot as plt
+from matplotlib import style
+import pandas as pd
+import pandas_datareader.data as web
+
+
+style.use('ggplot')
+start = dt.datetime(2020,1,1)
+end = dt.datetime(2022,1,13)
+
+df = web.DataReader('KRUS','yahoo',start,end)
+
+
+df['Adj Close'].plot()
+plt.show()
+
+#You can check the graph I just graphed!
+# https://imgur.com/VbpjtBY
