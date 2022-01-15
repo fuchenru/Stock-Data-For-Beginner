@@ -1,0 +1,17 @@
+import yfinance as yf
+import plotly.graph_objects as pg
+
+symbol = 'QQQ'
+inter = '1d'
+peri = '180d'
+
+prices = yf.Ticker(symbol).history(period=peri,interval=inter)
+
+df = prices
+
+fig = pg.Figure(data=[pg.Candlestick(x=df.index,
+                open=df['Open'], high=df['High'],
+                low=df['Low'], close=df['Close'])
+                     ])
+
+fig.show()
